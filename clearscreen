@@ -1,0 +1,62 @@
+#include<cstdlib>
+#include<bits/stdc++.h>
+using namespace std;
+ void clrscr(){
+std::cout << "\33[2J\33[1;1H" << std::flush;
+} 
+int main ()
+{
+  int test = 3;
+  int compwin=0,youwin=0;
+  while (test--)
+    {
+      int x,choice,winner;
+      cout << "1.Rock\n" << "2.Paper\n" << "3.Scissors\n";
+     cout<<"Your choice\n";
+      cin >> choice;
+      if (choice > 0 && choice < 4)
+	{
+    x=(rand()%3)+1;
+   cout<<"Computer Chooses "<<x<<endl;
+    if(x==1 && choice==2)
+    {cout<<"YOU WIN!!\n";
+    youwin++;
+        
+    }else if(x==1 && choice==3)
+    {cout<<"Computer wins\n";
+    compwin++;
+        
+    }else if(x==2 && choice==3)
+    {cout<<"YOU WIN!!\n";
+    youwin++;}
+    if(x==2 && choice==1)
+    {cout<<"Computer wins\n";
+    compwin++;
+        
+    }else if(x==3 && choice==1)
+    {cout<<"YOU WIN!!\n";
+    youwin++;
+        
+    }else if(x==3 && choice==2)
+    {cout<<"Computer wins\n";
+ compwin++;}
+ 
+    else if(x==choice)
+    cout<<"Draw\n";
+	}
+      else
+	{
+	  cout << "wrong choice\nDo it again";
+	  test++;
+	}
+clrscr();
+}
+
+if(youwin>compwin)
+cout<<"YOU WIN OVERALL";
+else if(compwin>youwin)
+cout<<"Computer WINS OVERALL";
+else
+cout<<"DRAW";
+  return 0;
+}
